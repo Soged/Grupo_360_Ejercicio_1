@@ -3,7 +3,7 @@
 # Empresa: Software FJ 
 # Modulo 1 - Daniel Esteban Zapata Abadia
 # Modulo 2 - JHOJHAN YEZID MENESES ARDILA
-# Modulo 3 - 
+# Modulo 3 - Victor Olmedo Tello Padilla
 # Modulo 4 - 
 # Modulo 5 - 
 
@@ -96,6 +96,8 @@ if __name__ == "__main__":
     try:
         # forzamos un error de datos invalidos para probar que quede guardado en el archivo .log
         raise DatosInvalidosError("Prueba de error: correo de cliente sin formato valido.")
+
+    
     except SoftwareFJError as err:
         GestorLogs.registrar_error(err, "Prueba unitaria Modulo 1")
         print("Error capturado y guardado en 'eventos_software_fj.log' correctamente.")
