@@ -2,7 +2,7 @@
 # Grupo:360
 # Empresa: Software FJ 
 # Modulo 1 - Daniel Esteban Zapata Abadia
-# Modulo 2 - JHOJHAN YEZID MENESES ARDILA
+# Modulo 2 - Jhojhan Yezid Meneses Ardila
 # Modulo 3 - Victor Olmedo Tello Padilla
 # Modulo 4 - 
 # Modulo 5 - 
