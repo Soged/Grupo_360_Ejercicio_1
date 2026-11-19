@@ -105,10 +105,6 @@ if __name__ == "__main__":
 
 # Modulo 2: GESTION DE CLIENTES
 
-# importamos re para validar formatos (correo, nombre) con expresiones regulares
-import re
-
-
 # funcion auxiliar: crea la excepcion, la encadena con su causa original y la registra en el log
 def _crear_error(mensaje, contexto, causa=None):
     error = DatosInvalidosError(mensaje)   # creamos la excepcion personalizada con el mensaje
@@ -191,7 +187,7 @@ class Cliente(EntidadSistema):
                                "Validacion telefono")
         return limpio
 
-    # ---------- ENCAPSULACION: PROPERTIES (getters y setters) ----------
+    # ENCAPSULACION: PROPERTIES (getters y setters)
 
     @property
     def documento(self):
@@ -225,7 +221,7 @@ class Cliente(EntidadSistema):
     def activo(self):
         return self._activo              # getter del estado (solo lectura desde afuera)
 
-    # ---------- METODOS DE ESTADO ----------
+    # METODOS DE ESTADO
 
     def desactivar(self):
         self._activo = False             # un cliente inactivo no deberia poder reservar
@@ -235,7 +231,7 @@ class Cliente(EntidadSistema):
         self._activo = True              # reactiva al cliente
         GestorLogs.registrar_info(f"Cliente {self.documento} activado.")
 
-    # ---------- METODOS ABSTRACTOS DEL PADRE (obligatorio implementarlos) ----------
+    # METODOS ABSTRACTOS DEL PADRE (obligatorio implementarlos)
 
     def validar_datos(self):
         # vuelve a validar todos los datos del objeto; devuelve True si todo esta bien
@@ -253,7 +249,7 @@ class Cliente(EntidadSistema):
     def __str__(self):
         return self.mostrar_resumen()    # al hacer print(cliente) se muestra el resumen
 
-    # ---------- REGISTRO SEGURO (try / except / else / finally) ----------
+    # REGISTRO SEGURO (try / except / else / finally)
 
     @classmethod
     def registrar(cls, lista_clientes, documento, nombre, correo, telefono):
@@ -280,8 +276,8 @@ class Cliente(EntidadSistema):
             GestorLogs.registrar_info("Intento de registro de cliente finalizado.")
 
 
-# prueba del modulo: 5 casos validos e invalidos (ejecutar este archivo directamente)
-if __name__ == "__main__":
+# prueba del modulo 2: 5 casos validos e invalidos
+def probar_modulo_2():
     print("Probando Modulo 2 (Clientes)...")
     clientes = []   # lista interna donde se guardan los clientes (sin base de datos)
 
