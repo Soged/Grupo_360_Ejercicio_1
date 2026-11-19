@@ -1,14 +1,18 @@
 # Curso: Programacion (213023) - Fase 4
 # Grupo:360
-# Empresa: Software FJ 
+# Empresa: Software FJ
 # Modulo 1 - Daniel Esteban Zapata Abadia
-# Modulo 2 - JHOJHAN YEZID MENESES ARDILA
+# Modulo 2 - Jhojhan Yezid Meneses Ardila
 # Modulo 3 - Victor Olmedo Tello Padilla
-# Modulo 4 - 
-# Modulo 5 - 
+# Modulo 4 - (Daniel Esteban Zapata - Jhojhan Yezid Meneses Ardila - Victor Olmedo Tello Padilla)
+# Modulo 5 - (Daniel Esteban Zapata - Jhojhan Yezid Meneses Ardila - Victor Olmedo Tello Padilla)
 
+import math
+import re
+import sys
 from abc import ABC, abstractmethod
 from datetime import datetime
+
 # Modulo 1: CIMIENTOS, LOGS Y EXCEPCIONES
 
 # gestor del archivo de logs para registrar eventos y errores sin detener el programa
@@ -88,19 +92,15 @@ class EntidadSistema(ABC):
         pass
 
 
-# pequena prueba unitaria de tu modulo (para verificar que crea el archivo .log bien)
-if __name__ == "__main__":
+# pequena prueba unitaria del modulo 1 (se ejecuta con: python ejercicio1.py pruebas)
+def probar_modulo_1():
     print("Probando Modulo 1 (Logs, Excepciones y Clase Abstracta)...")
     GestorLogs.registrar_info("Inicio de pruebas del Modulo 1 por Daniel Zapata.")
-    
+
     try:
         # forzamos un error de datos invalidos para probar que quede guardado en el archivo .log
         raise DatosInvalidosError("Prueba de error: correo de cliente sin formato valido.")
 
-    
     except SoftwareFJError as err:
         GestorLogs.registrar_error(err, "Prueba unitaria Modulo 1")
         print("Error capturado y guardado en 'eventos_software_fj.log' correctamente.")
-
-
-# Modulo 2: GESTION DE CLIENTES
